@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StyleImg</class>
+ <widget class="QDialog" name="StyleImg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>386</width>
+    <height>593</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QGridLayout" name="gridLayout_2" rowstretch="10,2,10,2,10,2,10,2" columnstretch="0,0,0">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="3" column="0" alignment="Qt::AlignHCenter|Qt::AlignTop">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>kandinsky_crop</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="label_11">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+image: url(:/style/style_image/oil_crop.jpg);
+border:1px solid;
+	border-color: rgba(255, 255, 255,0);
+}
+QLabel:hover{border:2px solid;
+border-color:&quot;blue&quot;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="label">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+	image: url(:/style/style_image/matisse_crop.jpg);
+border:1px solid;
+	border-color: rgba(255, 255, 255,0);
+}
+QLabel:hover{border:2px solid;
+border-color:&quot;blue&quot;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2" alignment="Qt::AlignHCenter|Qt::AlignTop">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>oil_crop</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>matisse_crop</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignHCenter|Qt::AlignTop</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+image: url(:/style/style_image/oily_mcoilface.jpg);
+border:1px solid;
+	border-color: rgba(255, 255, 255,0);
+}
+QLabel:hover{border:2px solid;
+border-color:&quot;blue&quot;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2" alignment="Qt::AlignHCenter|Qt::AlignTop">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string>okeffe_iris</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLabel" name="label_14">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+image: url(:/style/style_image/okeffe.jpg);
+border:1px solid;
+	border-color: rgba(255, 255, 255,0);
+}
+QLabel:hover{border:2px solid;
+border-color:&quot;blue&quot;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLabel" name="label_15">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+image: url(:/style/style_image/okeffe_iris.png);
+border:1px solid;
+	border-color: rgba(255, 255, 255,0);
+}
+QLabel:hover{border:2px solid;
+border-color:&quot;blue&quot;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_19">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+image: url(:/style/style_image/water_lilies_crop.jpg);
+border:1px solid;
+	border-color: rgba(255, 255, 255,0);
+}
+QLabel:hover{border:2px solid;
+border-color:&quot;blue&quot;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QLabel" name="label_24">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" alignment="Qt::AlignHCenter|Qt::AlignTop">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>okeffe</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1" alignment="Qt::AlignHCenter|Qt::AlignTop">
+        <widget class="QLabel" name="label_23">
+         <property name="text">
+          <string>wave_crop</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QLabel" name="label_21">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" alignment="Qt::AlignHCenter|Qt::AlignTop">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>oily_mcoilface</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLabel" name="label_20">
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+image: url(:/style/style_image/wave_crop.jpg);
+border:1px solid;
+	border-color: rgba(255, 255, 255,0);
+}
+QLabel:hover{border:2px solid;
+border-color:&quot;blue&quot;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" alignment="Qt::AlignHCenter|Qt::AlignTop">
+        <widget class="QLabel" name="label_22">
+         <property name="text">
+          <string>water_lilies_crop</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="styleSheet">
+          <string notr="true">QLabel{;
+image: url(:/style/style_image/kandinsky_crop.jpg);
+border:1px solid;
+	border-color: rgba(255, 255, 255,0);
+}
+QLabel:hover{border:2px solid;
+border-color:&quot;blue&quot;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="styleSheet">
+          <string notr="true">QLabel{;
+image: url(:/style/style_image/ben_giles.png);
+border:1px solid;
+	border-color: rgba(255, 255, 255,0);
+}
+QLabel:hover{border:2px solid;
+border-color:&quot;blue&quot;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" alignment="Qt::AlignHCenter|Qt::AlignTop">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>dark_matter_bw</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_7">
+         <property name="styleSheet">
+          <string notr="true">QLabel{;
+image: url(:/style/style_image/dark_matter_bw.png);
+border:1px solid;
+	border-color: rgba(255, 255, 255,0);
+}
+QLabel:hover{border:2px solid;
+border-color:&quot;blue&quot;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_8">
+         <property name="styleSheet">
+          <string notr="true">QLabel{;
+image: url(:/style/style_image/flowers_crop.jpg);
+border:1px solid;
+	border-color: rgba(255, 255, 255,0);
+}
+QLabel:hover{border:2px solid;
+border-color:&quot;blue&quot;}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" alignment="Qt::AlignHCenter|Qt::AlignTop">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>ben_giles</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2" alignment="Qt::AlignHCenter|Qt::AlignTop">
+        <widget class="QLabel" name="label_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>flowers_crop</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="topMargin">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(255, 255, 255, 0);
+border:None;</string>
+         </property>
+         <property name="text">
+          <string>Note:you can select four imgs at most.</string>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="topMargin">
+        <number>10</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>OK</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>CANCEL</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="picture.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>StyleImg</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>568</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>375</x>
+     <y>6</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>StyleImg</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>568</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>375</x>
+     <y>43</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

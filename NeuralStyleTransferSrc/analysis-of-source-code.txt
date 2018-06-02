@@ -1,0 +1,125 @@
+arguments:
+--content_img: Filename of the content image. Example: lion.jpg
+--content_img_dir: Relative or absolute directory path to the content image. Default: ./image_input
+--style_imgs: Filenames of the style images. To use multiple style images, pass a space-separated list. Example: --style_imgs starry-night.jpg
+--style_imgs_weights: The blending weights for each style image. Default: 1.0 (assumes only 1 style image)
+--style_imgs_dir: Relative or absolute directory path to the style images. Default: ./styles
+--init_img_type: Image used to initialize the network. Choices: content, random, style. Default: content
+--max_size: Maximum width or height of the input images. Default: 512
+--content_weight: Weight for the content loss function. Default: 5e0
+--style_weight: Weight for the style loss function. Default: 1e4
+--tv_weight: Weight for the total variational loss function. Default: 1e-3
+--temporal_weight: Weight for the temporal loss function. Default: 2e2
+--content_layers: Space-separated VGG-19 layer names used for the content image. Default: conv4_2
+--style_layers: Space-separated VGG-19 layer names used for the style image. Default: relu1_1 relu2_1 relu3_1 relu4_1 relu5_1
+--content_layer_weights: Space-separated weights of each content layer to the content loss. Default: 1.0
+--style_layer_weights: Space-separated weights of each style layer to loss. Default: 0.2 0.2 0.2 0.2 0.2
+--original_colors: Boolean flag indicating if the style is transferred but not the colors.
+--color_convert_type: Color spaces (YUV, YCrCb, CIE L*u*v*, CIE L*a*b*) for luminance-matching conversion to original colors. Choices: yuv, ycrcb, luv, lab. Default: yuv
+--style_mask: Boolean flag indicating if style is transferred to masked regions.
+--style_mask_imgs: Filenames of the style mask images (example: face_mask.png). To use multiple style mask images, pass a space-separated list. Example: --style_mask_imgs face_mask.png face_mask_inv.png
+--noise_ratio: Interpolation value between the content image and noise image if network is initialized with random. Default: 1.0
+--seed: Seed for the random number generator. Default: 0
+--model_weights: Weights and biases of the VGG-19 network. Download here. Default:imagenet-vgg-verydeep-19.mat
+--pooling_type: Type of pooling in convolutional neural network. Choices: avg, max. Default: avg
+--device: GPU or CPU device. GPU mode highly recommended but requires NVIDIA CUDA. Choices: /gpu:0 /cpu:0. Default: /gpu:0
+--img_output_dir: Directory to write output to. Default: ./image_output
+--img_name: Filename of the output image. Default: result
+--verbose: Boolean flag indicating if statements should be printed to the console.
+
+Optimization Arguments
+--optimizer: Loss minimization optimizer. L-BFGS gives better results. Adam uses less memory. Choices: lbfgs, adam. Default: lbfgs
+--learning_rate: Learning-rate parameter for the Adam optimizer. Default: 1e0
+
+Video Frame Arguments
+--video: Boolean flag indicating if the user is creating a video.
+--start_frame: First frame number. Default: 1
+--end_frame: Last frame number. Default: 1
+--first_frame_type: Image used to initialize the network during the rendering of the first frame. Choices: content, random, style. Default: random
+--init_frame_type: Image used to initialize the network during the every rendering after the first frame. Choices: prev_warped, prev, content, random, style. Default: prev_warped
+--video_input_dir: Relative or absolute directory path to input frames. Default: ./video_input
+--video_output_dir: Relative or absolute directory path to write output frames to. Default: ./video_output
+--content_frame_frmt: Format string of input frames. Default: frame_{}.png
+--backward_optical_flow_frmt: Format string of backward optical flow files. Default: backward_{}_{}.flo
+--forward_optical_flow_frmt: Format string of forward optical flow files. Default: forward_{}_{}.flo
+--content_weights_frmt: Format string of optical flow consistency files. Default: reliable_{}_{}.txt
+--prev_frame_indices: Previous frames to consider for longterm temporal consistency. Default: 1
+--first_frame_iterations: Maximum number of optimizer iterations of the first frame. Default: 2000
+--frame_iterations: Maximum number of optimizer iterations for each frame after the first frame. Default: 800
+
+suggestion: sort arguments by initials in alphabet
+
+Functions excuted order : image rendering
+--parse_arg : parse input arguments
+    --normalize : normalize content_layer_weights, style_layer_weights, style_imgs_weights, so the sum of each argument is one.
+        content_layer is the conv4_2
+        style_layer is the relu layer in each group,4 total
+        style_imag_weight means each style imag weight ,this algorithm surpport more than one style imag
+    --maybe_make_directory : make directory if the specified directory does not exist
+
+--render_single_image : render a single image by style image
+    --get_content_image : get content image 、 resize image 、 and preprocess
+        read image by SDK
+        --check_image: if the program read image succesfully
+        --preprocess : consitent with opencv problem and substract the mean value of vgg-19
+    --get_style_images : get style images and resize it the same as content image
+        read image by SDK
+        --check_image
+        --preprocess
+    build tf graph
+    --get_init_image : choose a initial image to optimize
+        content : initial with content image
+        style : initial with style image
+        random : add noise into content image
+            --get_noise_image
+    --stylize : rendering image
+        choose device to compute
+        --build_model : build model from pre-trained VGG-19 convelutional neural network #TODO unkown VGG-19 data type
+            set neural network's type as dict
+            read VGG-19
+            {
+            --conv_layer : construct convelutional layer
+            and
+            --relu_layer : construct relu layer
+            }
+                --get_weights : get VGG-19 specified layer weitghts as constant
+                --get_bias    : get VGG-19 specified layer bias as constant
+            --pool_layer : construct pool layer
+       {
+        --sum_masked_style_losses : masked image is a segmented black-white image ,this algotithm's main idea is segement a picture
+        into several black-white picture and use them as a filter when compute the style loss and then add style loss of each part
+        together as the picture's total style loss
+            --mask_style_layer:address mask image
+            --style_layer_loss:define how to compute style_loss
+                --gram_matrix:a important matrix used when computing style_loss
+
+        or
+        --sum_style_losses : sum the five relu layer value of one style image and then average it as style_loss , and then ,sum style_losses of each style image and then average it as total_style_loss
+            --style_layer_loss : define how to compute style_loss
+                --gram_matrix : a important matrix used when computing style_loss
+        }
+        --sum_content_losses : sum each specified layer's conten loss with respective weight and then avarege it as conten_loss
+            --conten_layer_loss : define how to compute content_loss
+        --tf.image.total_variation :
+                The total variation is the sum of the absolute differences for neighboring pixel-values in the input images.
+                This measures how much noise is in the images.This can be used as a loss-function during optimization so as to suppress noise in images.
+        sum the loss
+        --get_optimizer ： select a optimizer , 'adam' and 'L-BFGS-B' is selectable
+        {
+        --minimize_with_lbfgs : run optimizer with lbfgs
+        or
+        --minimize_with_adam : run optimizer with adam
+        }
+        get output_img
+        --conver_to_original_colors : conver stylized image the same with content image
+            --postprocess : converse process of preprocess
+        --write_image_output : save results and generate transfer infomation
+            --maybe_make_directory : make directory to save results
+            --write_image : write image by cv2 SDK
+            write out file named as meta_data.txt which contains basic transfer information
+
+
+
+
+
+

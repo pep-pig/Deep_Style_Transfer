@@ -1,0 +1,37 @@
+<RCC>
+  <qresource prefix="content">
+    <file>content_image/3.jpeg</file>
+    <file>content_image/04.jpeg</file>
+    <file>content_image/garden.png</file>
+    <file>content_image/lion.jpg</file>
+    <file>content_image/new_york.png</file>
+    <file>content_image/taj_mahal.jpg</file>
+    <file>content_image/tubingen.jpg</file>
+  </qresource>
+  <qresource prefix="backgroundpicture">
+    <file>background/1.jpg</file>
+    <file>background/3.jpeg</file>
+    <file>background/42_output.png</file>
+    <file>background/lion.jpg</file>
+    <file>background/oil_crop.jpg</file>
+    <file>background/oily_mcoilface.jpg</file>
+    <file>background/tubingen_basquiat_nielly.png</file>
+  </qresource>
+  <qresource prefix="style">
+    <file>style_image/1.jpg</file>
+    <file>style_image/ben_giles.png</file>
+    <file>style_image/dark_matter_bw.png</file>
+    <file>style_image/flowers_crop.jpg</file>
+    <file>style_image/kandinsky_crop.jpg</file>
+    <file>style_image/matisse_crop.jpg</file>
+    <file>style_image/oil_crop.jpg</file>
+    <file>style_image/oily_mcoilface.jpg</file>
+    <file>style_image/okeffe.jpg</file>
+    <file>style_image/okeffe_iris.png</file>
+    <file>style_image/water_lilies_crop.jpg</file>
+    <file>style_image/wave_crop.jpg</file>
+  </qresource>
+  <qresource prefix="button">
+    <file>icon/resizeApi.png</file>
+  </qresource>
+</RCC>
