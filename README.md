@@ -7,5 +7,5 @@ This application is developed by PyQt5
 * Although the app offer GPU device to calculate , but actually it can not use GPU as the tensorflow is not the GPU version. If you want to use GPU version , you could run the source code in CMD by inputting 'python callGUI.py'. But the preconditon is that you installed the tensorflow-gpu and configurated it successfully.
 ## GUI Display
 <p align="center">
-<img src="NeuralStyleTransferSrc/icon/GUI.png" width="512"/>
+<img src="NeuralStyleTransferSrc/icon/GUI.PNG" width="512"/>
 </p>
