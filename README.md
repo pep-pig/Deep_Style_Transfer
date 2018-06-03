@@ -1,4 +1,4 @@
-# Deep-_Style_Transfer
+# Deep_Style_Transfer
 This application is developed by PyQt5
 ## Note
 * The .exe application is biger than 100MB, so if you want the exe application ,you can leave your email in issues page. After i finished the contruction of my webside ,i will put all the source on there ,and show the web address here.
