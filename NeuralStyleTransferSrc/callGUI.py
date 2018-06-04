@@ -20,6 +20,7 @@ from current_setting import *
 from solve_dialog import *
 from arguments import args
 from neural_style import *
+import scipy.optimize.lbfgsb as lbfgs
 class MyMainWindow(QMainWindow, Ui_MainWindow):
     #self defined signal
     label_clicked = pyqtSignal(QLabel)
@@ -119,6 +120,7 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
             self.show_image(self.results)
     def start(self):
         self.results = ''
+        lbfgs.loss_fun = []
         parameters = ''
         for key in self.args:
             key_=key
@@ -541,7 +543,7 @@ class MyStyWindow(QDialog,Ui_StyleImg):
         if label.text() == '':
             if re.search(r'QLabel{border:',label.styleSheet()):
                 #print(label.styleSheet())
-                self.style_img_list.remove(re.findall(r'style_image/.*png|style_image/.*ppm|style_image/.*jpg|style_image/.*pgm',label.styleSheet())[0])
+                self.style_img_list.remove(os.path.abspath(re.findall(r'style_image/.*png|style_image/.*ppm|style_image/.*jpg|style_image/.*pgm',label.styleSheet())[0]))
                 self.style_img_num -= 1
                 label.setStyleSheet(re.sub(r"QLabel{border:2px solid;border-color:\"blue\"}",'',label.styleSheet()))
 
