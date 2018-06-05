@@ -1,5 +1,8 @@
 # Deep_Style_Transfer
 This application is developed by PyQt5
+
+## Usage
+* run command `python callGUI.py` in windows cmd or powershell
 ## Note
 * The .exe application is biger than 100MB, so if you want the exe application ,you can leave your email in issues page,or you can generate .exe application with [Pyinstaller](https://github.com/pyinstaller/pyinstaller).
 * Before using this application ,you have to download the [VGG-19 model weights](http://www.vlfeat.org/matconvnet/pretrained/)
