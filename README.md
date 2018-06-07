@@ -13,3 +13,10 @@ This application is developed by PyQt5
 <p align="center">
 <img src="NeuralStyleTransferSrc/icon/GUI.PNG" width="512"/>
 </p>
+
+## Example
+<p align="center">
+<img src="example/FRESHNESS-OF-COLD.jpg" width = "400">
+<img src="example/FRESHNESS-OF-COLD-STYLED.png" width = "400">
+</p>
+* img in the left is style img ,and img in the right is the result img 
