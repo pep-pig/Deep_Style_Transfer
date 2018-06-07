@@ -20,6 +20,7 @@ from current_setting import *
 from solve_dialog import *
 from arguments import args
 from neural_style import *
+import neural_style
 import scipy.optimize.lbfgsb as lbfgs
 class MyMainWindow(QMainWindow, Ui_MainWindow):
     #self defined signal
@@ -121,6 +122,7 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
     def start(self):
         self.results = ''
         lbfgs.loss_fun = []
+        neural_style.f
         parameters = ''
         for key in self.args:
             key_=key
@@ -230,7 +232,9 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
                 self.pushButton_4.setMaximumSize(QtCore.QSize(0, 0))
                 self.show_image(styimg_list[0])
                 self.args["--style_image"] = styimg_list[0]
+                self.args['--style_imgs_weights'] = [1.0]
                 self.lineEdit_2.setText(styimg_list[0])
+                self.settingWin.treeWidget_2.topLevelItem(0).takeChildren()
             else:
                 self.pushButton_4.setMaximumSize(QtCore.QSize(20, 100))
                 strs = ''
