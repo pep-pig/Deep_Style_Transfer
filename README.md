@@ -5,7 +5,7 @@ This application is developed by PyQt5
 * run command `python callGUI.py` in windows cmd or powershell
 ## Note
 * The .exe application is biger than 100MB, so if you want the exe application ,you can leave your email in issues page,or you can generate .exe application with [Pyinstaller](https://github.com/pyinstaller/pyinstaller).
-* Before using this application ,you have to download the [VGG-19 model weights](http://www.vlfeat.org/matconvnet/pretrained/),after downloading, copy the weights file `imagenet-vgg-verydeep-19.mat` to the project directory.
+* Before using this application ,you have to download the [VGG-19 model weights](http://www.vlfeat.org/matconvnet/pretrained/),after downloading, copy the weights file `imagenet-vgg-verydeep-19.mat` to the project directory,and you should know that there are different versions of VGG-19,you'd better download the VGG-19 offered by the superlink above .
 * If you want to use lbfgs algotithm ,you should download the lbfgs.py to overide the lbfgs.py in your scipy\optimize,because i has changed the source code in scipy\optimize\lbfgs.py so that the app can plot the convergence cureve of loss function in every iteration
 
 ## GUI Display
