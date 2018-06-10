@@ -15,8 +15,13 @@ This application is developed by PyQt5
 </p>
 
 ## Example
+* left is style image and right is content image
 <p align="center">
 <img src="example/FRESHNESS-OF-COLD.jpg" width = "400">
-<img src="example/FRESHNESS-OF-COLD-STYLED.png" width = "400">
+<img src="example/tubingen.jpg" width = "400">
 </p>
-* img in the left is style img ,and img in the right is the result img 
+
+* result img
+<p align="center">
+<img src="example/FRESHNESS-OF-COLD-STYLED.png" width = "800">
+</p>
